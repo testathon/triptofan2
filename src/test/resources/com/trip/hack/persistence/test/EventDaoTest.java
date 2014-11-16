@@ -2,8 +2,9 @@ package com.trip.hack.persistence.test;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
-import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceUnit;
 
 import junit.framework.Assert;
 
@@ -13,10 +14,18 @@ import com.trip.hack.domain.Event;
 
 public class EventDaoTest {
 
-	@PersistenceContext(unitName="GREG") protected EntityManager em;
+	private EntityManager em;
+    private EntityManagerFactory emf;
+    
+    @PersistenceUnit(unitName = "GREG")
+    public void setEmf(EntityManagerFactory emf) {
+          this.emf = emf;
+          this.em = emf.createEntityManager();
+    }
 
 	@Test
 	public void testAutoIncrement() {
+		setEmf(emf);
 		EntityTransaction transaction = em.getTransaction();
 		transaction.begin();
 
