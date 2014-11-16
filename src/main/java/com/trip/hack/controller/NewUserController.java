@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/user")
 public class NewUserController {
 
-	@RequestMapping("/add")
+	@RequestMapping("/add" )
 	public String newUser(ModelMap modelMap) {
-		
+		String email = (String) modelMap.get("email");
 		return "newUser";
 	}
 }

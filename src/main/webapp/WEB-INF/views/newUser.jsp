@@ -7,6 +7,7 @@
 <body>
 	<h1>New User</h1>
 	<form action="../add">
+	<c:if test=""></c:if>
 		<p>
 			Enter e-mail: <input type="text" id="email" size="20" />
 		</p>
@@ -22,6 +23,7 @@
 		<p>
 			Re-enter password: <input type="password" id="email" size="20" />
 		</p>
+		<button type="submit">Submit</button>
 	</form>
 </body>
 </html>
