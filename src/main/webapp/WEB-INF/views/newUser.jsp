@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ page session="false"%>
 <html>
 <head>
@@ -6,24 +7,29 @@
 </head>
 <body>
 	<h1>New User</h1>
-	<form action="../add">
-	<c:if test=""></c:if>
+	<form:form action="add" method="post">
+		<c:if test=""></c:if>
 		<p>
-			Enter e-mail: <input type="text" id="email" size="20" />
+			Enter e-mail:
+			<form:input path="email" size="20" />
 		</p>
 		<p>
-			Re enter e-mail: <input type="text" id="renterEmail" size="20" />
+			Re enter e-mail:
+			<form:input path="reenteredEmail" size="20" />
 		</p>
 		<p>
-			Choose an user name: <input type="text" id="name" size="20" />
+			Choose an user name:
+			<form:input path="name" size="20" />
 		</p>
 		<p>
-			Password: <input type="password" id="email" size="20" />
+			Password:
+			<form:input path="password" size="20" />
 		</p>
 		<p>
-			Re-enter password: <input type="password" id="email" size="20" />
+			Re-enter password:
+			<form:input path="reenteredPassword" size="20" />
 		</p>
 		<button type="submit">Submit</button>
-	</form>
+	</form:form>
 </body>
 </html>
