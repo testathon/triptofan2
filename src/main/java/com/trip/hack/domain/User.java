@@ -4,6 +4,11 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+
+@Entity
 public class User implements Serializable{
 	
     /**
@@ -25,12 +30,12 @@ public class User implements Serializable{
 
     /**
      */
-    //@ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<Itenerary> createdIteneries = new ArrayList<Itenerary>();
 
     /**
      */
-    //@ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<Itenerary> favoriteIteneries = new ArrayList<Itenerary>();
 
 	public String getEmail() {
@@ -72,7 +77,5 @@ public class User implements Serializable{
 	public void setFavoriteIteneries(List<Itenerary> favoriteIteneries) {
 		this.favoriteIteneries = favoriteIteneries;
 	}
-    
-    
 
 }

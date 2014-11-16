@@ -2,6 +2,9 @@ package com.trip.hack.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Location implements Serializable{
 	
     /**
@@ -80,7 +83,5 @@ public class Location implements Serializable{
 	public void setZip(Number zip) {
 		this.zip = zip;
 	}
-    
-    
 
 }

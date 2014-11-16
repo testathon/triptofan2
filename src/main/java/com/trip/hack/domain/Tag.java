@@ -2,6 +2,9 @@ package com.trip.hack.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Tag implements Serializable{
 
 	/**
