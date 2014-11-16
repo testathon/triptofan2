@@ -1,6 +1,7 @@
 package com.trip.hack.view;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.trip.hack.domain.User;
@@ -11,19 +12,27 @@ public class UserViewBean implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 8711404970411307722L;
-	private List<String> errorMessage;
+	private List<String> errorMessages = new ArrayList<String>();
 	private String name;
 	private String email;
 	private String reenteredEmail;
 	private String password;
 	private String reenteredPassword;
 
-	public List<String> getErrorMessage() {
-		return errorMessage;
+	public void addErrorMessage(String errorMessage) {
+		errorMessages.add(errorMessage);
 	}
 
-	public void setErrorMessage(List<String> errorMessage) {
-		this.errorMessage = errorMessage;
+	public void clearErrorMessages() {
+		errorMessages.clear();
+	}
+
+	public List<String> getErrorMessages() {
+		return errorMessages;
+	}
+
+	public void setErrorMessages(List<String> errorMessage) {
+		this.errorMessages = errorMessage;
 	}
 
 	public String getName() {
@@ -67,6 +76,6 @@ public class UserViewBean implements Serializable {
 	}
 
 	public boolean hasErrors() {
-		return !errorMessage.isEmpty();
+		return !errorMessages.isEmpty();
 	}
 }
