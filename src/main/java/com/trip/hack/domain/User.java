@@ -6,15 +6,23 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "USER")
 public class User implements Serializable{
 	
     /**
 	 * 
 	 */
 	private static final long serialVersionUID = 5325408405136831039L;
+	
+	@Id
+	@GeneratedValue
+	private int id;
 	
     /**
      */
@@ -76,6 +84,14 @@ public class User implements Serializable{
 
 	public void setFavoriteIteneries(List<Itenerary> favoriteIteneries) {
 		this.favoriteIteneries = favoriteIteneries;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 }

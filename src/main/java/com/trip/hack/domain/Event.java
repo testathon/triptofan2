@@ -7,16 +7,24 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "EVENT")
 public class Event implements Serializable {
 	
     /**
 	 * 
 	 */
 	private static final long serialVersionUID = 7210306164300582702L;
+	
+	@Id
+	@GeneratedValue
+	private int id;
 
 	/**
      */
@@ -79,6 +87,14 @@ public class Event implements Serializable {
 
 	public void setLocation(Location location) {
 		this.location = location;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 }
