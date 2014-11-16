@@ -3,14 +3,22 @@ package com.trip.hack.domain;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "LOCATION")
 public class Location implements Serializable{
 	
     /**
 	 * 
 	 */
 	private static final long serialVersionUID = -311151837166897503L;
+	
+	@Id
+	@GeneratedValue
+	private int id;
 
 	/**
      */
@@ -82,6 +90,14 @@ public class Location implements Serializable{
 
 	public void setZip(Number zip) {
 		this.zip = zip;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 }
